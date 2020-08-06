@@ -4,6 +4,13 @@
     --xl-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
+a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+}
+
 .App {
     background-color: white;
     display: flex;
@@ -30,6 +37,12 @@ li {
     line-height: 2rem;
 }
 
+.logo:hover,
+header div button:hover,
+.pagination-button:hover {
+    cursor: pointer;
+}
+
 .loading {
     position: fixed;
     top: 50%;
@@ -41,7 +54,7 @@ li {
 }
 
 .container {
-    width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -51,12 +64,13 @@ header,
 }
 
 header {
-    background-color: black;
+    background-color: #ed1d24;
+    padding: 1rem 0;
 }
 
 header div {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
 header img {
@@ -69,10 +83,15 @@ header div button {
     color: white;
     background-color: transparent;
     border: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.header div button:hover {
-    color: red;
+header div button:hover {
+    transform: scale(1.03);
+}
+
+.search-bar-section {
+    background-color: black;
 }
 
 .search-bar {
@@ -88,11 +107,16 @@ header div button {
     border: 1px solid lightgrey;
     box-shadow: var(--xl-shadow);
     margin-right: 20px;
+    font-size: 1.1rem;
 }
 
 .search-bar button {
     background-color: lightgrey;
     width: 100px;
+}
+
+.search-bar input {
+    padding-left: 10px;
 }
 
 .main {
@@ -110,12 +134,20 @@ header div button {
 }
 
 .character-section-element {
+    position: relative;
     background-color: white;
     width: 24%;
     margin-bottom: 30px;
     border-radius: 5px;
     height: 250px;
     box-shadow: var(--xl-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.character-section-element:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    text-decoration: underline;
 }
 
 .character-section-element h2 {
@@ -144,6 +176,13 @@ header div button {
     height: 200px;
     margin-bottom: 20px;
     box-shadow: var(--heavy-shadow);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.comics-section-element:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .comics-section-element h2 {
@@ -160,17 +199,73 @@ header div button {
     margin-right: 10px;
 }
 
-/* .pagination {
-    background-color: aliceblue;
-    overflow-y: auto;
-    height: 20px;
+.pagination {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
-    border: 2px solid red;
-} */
+    background-color: white;
+}
 
-.pagination button {
-    border: none;
-    background-color: transparent;
-    height: 20px;
-    font-size: 18px;
+.pagination-button {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.pagination-button:hover {
+    border: 1px solid black;
+}
+
+.pagination-input {
+    text-align: center;
+    width: 80px;
+}
+
+.selected {
+    background-color: red;
+}
+
+.favorite {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: var(--heavy-shadow);
+    top: 10px;
+    right: 10px;
+}
+
+.favorite svg {
+    fill: white;
+    stroke: black;
+}
+
+.favorite svg:hover {
+    fill: #ffcc16;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+    .character-section-element {
+        width: 49%;
+    }
+    .search-bar {
+        width: 100%;
+    }
+    .search-bar input {
+        width: 50%;
+    }
+    .search-bar button {
+        width: 20%;
+    }
 }

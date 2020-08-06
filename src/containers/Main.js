@@ -14,7 +14,7 @@ const Main = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            let apiUrl = `http://localhost:4000/characters?nameStartsWith=${search}`;
+            let apiUrl = `https://marvel-myproject-backend.herokuapp.com/characters?nameStartsWith=${search}`;
             if (page !== 1) {
                 apiUrl += `&offset=${Number(page) * 100}`;
             }
@@ -22,8 +22,7 @@ const Main = () => {
                 const response = await axios.get(apiUrl);
                 setIsLoading(false);
                 setData(response.data.results);
-                setNumberOfPage(Math.ceil(response.data.total / 100));
-                console.log(response.data.results);
+                setNumberOfPage(Math.ceil(response.data.total / 100) - 1);
             } catch (e) {
                 alert("An error occurred");
             }
@@ -33,12 +32,11 @@ const Main = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        let apiUrl = `http://localhost:4000/charactersSearch?nameStartsWith=${search}`;
+        let apiUrl = `https://marvel-myproject-backend.herokuapp.com/characters?nameStartsWith=${search}`;
         try {
             const response = await axios.get(apiUrl);
             setIsLoading(false);
             setData(response.data.results);
-            console.log(response.data.results);
             setNumberOfPage(Math.ceil(response.data.total / 100));
         } catch (e) {
             alert("An error occurred");
