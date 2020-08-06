@@ -31,6 +31,13 @@ const Header = () => {
                     >
                         <span>Comics</span>
                     </button>
+                    <button
+                        onClick={() => {
+                            history.push(`/favorites`);
+                        }}
+                    >
+                        <span>Favorites</span>
+                    </button>
                 </div>
             </div>
         </header>

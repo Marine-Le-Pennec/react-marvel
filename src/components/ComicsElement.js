@@ -1,11 +1,10 @@
 import React from "react";
 
-import Favorite from "./svg/Favorite";
+import Cookies from "js-cookie";
 
 const ComicsElements = ({ index, comics }) => {
     return (
         <div className="comics-section-element" key={index}>
-            <Favorite />
             {comics.thumbnail.path !==
                 "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
                 <img

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import Cookies from "js-cookie";
+
 import ComicsElements from "../components/ComicsElement";
 import Pagination from "../components/Pagination";
 import Loading from "../components/svg/Loading";
@@ -29,6 +31,12 @@ const Comics = () => {
         };
         fetchData();
     }, [page, search]);
+
+    const userCookies = Cookies.get("marvelFavoriteComics");
+    let userCookiesArray;
+    if (userCookies) {
+        userCookiesArray = userCookies.split("&");
+    }
 
     const handleSearch = (event) => {
         const value = event.target.value;
@@ -64,7 +72,19 @@ const Comics = () => {
                             return (
                                 e.thumbnail.path !==
                                     "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
-                                    <ComicsElements key={index} comics={e} />
+                                    <ComicsElements
+                                        key={index}
+                                        comics={e}
+                                        isFav={
+                                            !userCookiesArray
+                                                ? false
+                                                : userCookiesArray.indexOf(
+                                                      e.id.toString()
+                                                  ) !== -1
+                                                ? true
+                                                : false
+                                        }
+                                    />
                                 )
                             );
                         })}

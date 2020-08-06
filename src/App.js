@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Comics from "./containers/Comics";
 import Main from "./containers/Main";
 import CharacterComics from "./containers/CharacterComics";
+import Favorites from "./containers/Favorites";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,6 +16,9 @@ function App() {
                 <Switch>
                     <Route path="/comics">
                         <Comics />
+                    </Route>
+                    <Route path="/favorites">
+                        <Favorites />
                     </Route>
                     <Route path="/charactercomics">
                         <CharacterComics />

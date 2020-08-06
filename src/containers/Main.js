@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import Cookies from "js-cookie";
+
 import CharacterElement from "../components/CharacterElement";
 import Pagination from "../components/Pagination";
 import Loading from "../components/svg/Loading";
@@ -29,6 +31,12 @@ const Main = () => {
         };
         fetchData();
     }, [page, search]);
+
+    const userCookies = Cookies.get("marvelFavoriteCharacters");
+    let userCookiesArray;
+    if (userCookies) {
+        userCookiesArray = userCookies.split("&");
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -66,6 +74,15 @@ const Main = () => {
                                     <CharacterElement
                                         key={index}
                                         character={e}
+                                        isFav={
+                                            !userCookiesArray
+                                                ? false
+                                                : userCookiesArray.indexOf(
+                                                      e.id.toString()
+                                                  ) !== -1
+                                                ? true
+                                                : false
+                                        }
                                     />
                                 )
                             );

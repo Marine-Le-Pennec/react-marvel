@@ -229,7 +229,7 @@ header div button:hover {
     background-color: red;
 }
 
-.favorite {
+.favorite-container {
     display: grid;
     place-items: center;
     position: absolute;
@@ -242,7 +242,12 @@ header div button:hover {
     right: 10px;
 }
 
-.favorite svg {
+.isfavorite {
+    fill: orange;
+    stroke: black;
+}
+
+.notfavorite {
     fill: white;
     stroke: black;
 }
@@ -250,6 +255,33 @@ header div button:hover {
 .favorite svg:hover {
     fill: #ffcc16;
     cursor: pointer;
+}
+
+.favorites {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favorite-character-element {
+    width: 100%;
+    display: flex;
+    background-color: black;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: var(--heavy-shadow);
+}
+
+.favorite-character-element img {
+    height: 200px;
+    margin-right: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.favorite-character-element h3 {
+    margin: 20px 0;
 }
 
 @media screen and (max-width: 1200px) {
