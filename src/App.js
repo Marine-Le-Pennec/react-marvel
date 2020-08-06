@@ -5,7 +5,7 @@ import Comics from "./containers/Comics";
 import Main from "./containers/Main";
 import CharacterComics from "./containers/CharacterComics";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
     return (

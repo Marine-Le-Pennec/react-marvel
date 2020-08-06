@@ -2,11 +2,7 @@ import React from "react";
 
 import Favorite from "./svg/Favorite";
 
-import { useHistory } from "react-router-dom";
-
 const ComicsElements = ({ index, comics }) => {
-    const history = useHistory();
-
     return (
         <div className="comics-section-element" key={index}>
             <Favorite />
