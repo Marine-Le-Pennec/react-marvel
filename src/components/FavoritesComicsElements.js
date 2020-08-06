@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-const FavoritesCharactersElements = ({ index, id }) => {
+const FavoritesComicsElements = ({ index, id }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
-            let apiUrl = `https://marvel-myproject-backend.herokuapp.com/characters/${id}`;
+            let apiUrl = `https://marvel-myproject-backend.herokuapp.com/comics/${id}`;
             try {
                 const response = await axios.get(apiUrl);
                 setData(response.data.results[0]);
@@ -28,7 +28,7 @@ const FavoritesCharactersElements = ({ index, id }) => {
                     alt=""
                 />
                 <div>
-                    <h3>{data.name}</h3>
+                    <h3>{data.title}</h3>
                     <p>{data.description}</p>
                 </div>
             </div>
@@ -36,4 +36,4 @@ const FavoritesCharactersElements = ({ index, id }) => {
     );
 };
 
-export default FavoritesCharactersElements;
+export default FavoritesComicsElements;
