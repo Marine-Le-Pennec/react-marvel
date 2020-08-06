@@ -1,26 +1,106 @@
+:root {
+    --background: #fafafa;
+    --heavy-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    --xl-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
 .App {
-    background-color: #2f4550;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+    font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+li {
+    line-height: 2rem;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
 }
 
 .container {
-    width: 1000px;
+    width: 1400px;
     margin: 0 auto;
 }
 
+header,
+.search-bar {
+    margin-bottom: 30px;
+}
+
+header {
+    background-color: black;
+}
+
 header div {
-    background-color: white;
+    display: flex;
+    align-items: center;
 }
 
 header img {
     width: 200px;
 }
 
+header div button {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.header div button:hover {
+    color: red;
+}
+
+.search-bar {
+    height: 50px;
+}
+
+.search-bar input,
+.search-bar button {
+    height: 50px;
+    width: 500px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid lightgrey;
+    box-shadow: var(--xl-shadow);
+    margin-right: 20px;
+}
+
+.search-bar button {
+    background-color: lightgrey;
+    width: 100px;
+}
+
 .main {
-    background-color: lightblue;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .character-section {
@@ -30,9 +110,67 @@ header img {
 }
 
 .character-section-element {
-    background-color: burlywood;
+    background-color: white;
+    width: 24%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    height: 250px;
+    box-shadow: var(--xl-shadow);
+}
+
+.character-section-element h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .character-section-element img {
-    width: 150px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.comics-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.comics-section-element {
+    width: 100%;
+    display: flex;
+    height: 200px;
+    margin-bottom: 20px;
+    box-shadow: var(--heavy-shadow);
+}
+
+.comics-section-element h2 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.comics-section-element p {
+    font-size: 0.8rem;
+}
+
+.comics-section-element img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+/* .pagination {
+    background-color: aliceblue;
+    overflow-y: auto;
+    height: 20px;
+    margin-bottom: 20px;
+    border: 2px solid red;
+} */
+
+.pagination button {
+    border: none;
+    background-color: transparent;
+    height: 20px;
+    font-size: 18px;
 }

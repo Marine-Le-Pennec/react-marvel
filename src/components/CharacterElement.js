@@ -13,10 +13,13 @@ const CharacterElement = ({ index, character }) => {
                 history.push("/charactercomics", { character: character });
             }}
         >
-            {character.thumbnail.path !==
-                "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
-                <img src={character.thumbnail.path + `.jpg`} alt="" />
-            )}
+            <img
+                src={
+                    character.thumbnail.path +
+                    `.${character.thumbnail.extension}`
+                }
+                alt=""
+            />
             <h2>{character.name}</h2>
         </div>
     );

@@ -19,6 +19,9 @@ function App() {
                     <Route path="/charactercomics">
                         <CharacterComics />
                     </Route>
+                    <Route path="/character">
+                        <Main />
+                    </Route>
                     <Route path="/">
                         <Main />
                     </Route>

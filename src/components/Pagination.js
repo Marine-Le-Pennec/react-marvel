@@ -14,7 +14,7 @@ const Pagination = ({
         setPage(input);
     };
     return (
-        <div>
+        <div className="pagination">
             {!isLoading &&
                 [...Array(numberOfPage)].map((x, i) => (
                     <button
