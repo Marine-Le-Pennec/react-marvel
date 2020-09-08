@@ -1,335 +1,335 @@
 :root {
-    --background: #fafafa;
-    --heavy-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-    --xl-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --background: #fafafa;
+  --heavy-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  --xl-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 a,
 a:visited,
 a:hover,
 a:active {
-    color: inherit;
+  color: inherit;
 }
 
 .App {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-family: "Roboto Mono", monospace;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Roboto Mono", monospace;
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
 h3 {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 li {
-    line-height: 2rem;
+  line-height: 2rem;
 }
 
 .logo:hover,
 header div button:hover,
 .pagination-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .loading {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    margin-top: -100px;
-    margin-left: -100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header,
 .search-bar {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 header {
-    background-color: #ed1d24;
-    padding: 1rem 0;
+  background-color: #ed1d24;
+  padding: 1rem 0;
 }
 
 header div {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 header img {
-    width: 200px;
+  width: 200px;
 }
 
 header div button {
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-    background-color: transparent;
-    border: none;
-    transition: all 0.3s ease-in-out;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease-in-out;
 }
 
 header div button:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .search-bar-section {
-    background-color: black;
+  background-color: black;
 }
 
 .search-bar {
-    height: 50px;
+  height: 50px;
 }
 
 .search-bar input,
 .search-bar button {
-    height: 50px;
-    width: 500px;
-    border-radius: 5px;
-    border: none;
-    border: 1px solid lightgrey;
-    box-shadow: var(--xl-shadow);
-    margin-right: 20px;
-    font-size: 1.1rem;
+  height: 50px;
+  width: 500px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid lightgrey;
+  box-shadow: var(--xl-shadow);
+  margin-right: 20px;
+  font-size: 1.1rem;
 }
 
 .search-bar button {
-    background-color: lightgrey;
-    width: 100px;
+  background-color: lightgrey;
+  width: 100px;
 }
 
 .search-bar input {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .main {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .character-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .character-section-element {
-    position: relative;
-    background-color: white;
-    width: 24%;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    height: 250px;
-    box-shadow: var(--xl-shadow);
-    transition: all 0.3s ease-in-out;
+  position: relative;
+  background-color: white;
+  width: 24%;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  height: 250px;
+  box-shadow: var(--xl-shadow);
+  transition: all 0.3s ease-in-out;
 }
 
 .character-section-element:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.05);
+  text-decoration: underline;
 }
 
 .character-section-element h2 {
-    margin-top: 10px;
-    font-size: 20px;
-    text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .character-section-element img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .comics-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .comics-section-element {
-    position: relative;
-    width: 100%;
-    display: flex;
-    height: 200px;
-    margin-bottom: 20px;
-    box-shadow: var(--heavy-shadow);
-    position: relative;
-    transition: all 0.3s ease-in-out;
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 200px;
+  margin-bottom: 20px;
+  box-shadow: var(--heavy-shadow);
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
 .comics-section-element:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .comics-section-element h2 {
-    margin-top: 10px;
-    font-size: 1.2rem;
+  margin-top: 10px;
+  font-size: 1.2rem;
 }
 
 .comics-section-element p {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .comics-section-element img {
-    height: 100%;
-    margin-right: 10px;
+  height: 100%;
+  margin-right: 10px;
 }
 
 .pagination {
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color: white;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: white;
 }
 
 .pagination-button {
-    height: 40px;
-    width: 40px;
-    margin-right: 5px;
-    border: 1px solid transparent;
-    border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
 .pagination-button:hover {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .pagination-input {
-    text-align: center;
-    width: 80px;
+  text-align: center;
+  width: 80px;
 }
 
 .selected {
-    background-color: red;
+  background-color: red;
 }
 
 .favorite-container {
-    display: grid;
-    place-items: center;
-    position: absolute;
-    height: 35px;
-    width: 35px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: var(--heavy-shadow);
-    top: 10px;
-    right: 10px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: var(--heavy-shadow);
+  top: 10px;
+  right: 10px;
 }
 
 .isfavorite {
-    fill: orange;
-    stroke: black;
-    transition: all 0.3s ease-in-out;
+  fill: orange;
+  stroke: black;
+  transition: all 0.3s ease-in-out;
 }
 
 .notfavorite {
-    fill: white;
-    stroke: black;
-    transition: all 0.3s ease-in-out;
+  fill: white;
+  stroke: black;
+  transition: all 0.3s ease-in-out;
 }
 
 .favorites {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .favorites-title {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .favorites-title button {
-    color: grey;
-    height: 100%;
-    background-color: transparent;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
+  color: grey;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 .favorites-title button:hover {
-    color: red;
+  color: red;
 }
 
 .favorite-character-element {
-    width: 100%;
-    display: flex;
-    background-color: black;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    color: white;
-    border-radius: 10px;
-    box-shadow: var(--heavy-shadow);
-    transition: all 0.3s ease-in-out;
+  width: 100%;
+  display: flex;
+  background-color: black;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: var(--heavy-shadow);
+  transition: all 0.3s ease-in-out;
 }
 
 .favorite-character-element:hover {
-    cursor: pointer;
-    transform: scale(1.01);
+  cursor: pointer;
+  transform: scale(1.01);
 }
 
 .favorite-character-element img {
-    height: 200px;
-    margin-right: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+  height: 200px;
+  margin-right: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .favorite-character-element h3 {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .favorite-character-element p {
-    font-size: 0.9rem;
-    color: #808484;
-    line-height: 1.3rem;
-    height: 5.2rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #808484;
+  line-height: 1.3rem;
+  height: 5.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 1rem;
 }
 
 @media screen and (max-width: 1200px) {
-    .container {
-        width: 80%;
-    }
-    .character-section-element {
-        width: 49%;
-    }
-    .search-bar {
-        width: 100%;
-    }
-    .search-bar input {
-        width: 50%;
-    }
-    .search-bar button {
-        width: 20%;
-    }
+  .container {
+    width: 80%;
+  }
+  .character-section-element {
+    width: 49%;
+  }
+  .search-bar {
+    width: 100%;
+  }
+  .search-bar input {
+    width: 50%;
+  }
+  .search-bar button {
+    width: 20%;
+  }
 }

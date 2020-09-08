@@ -13,15 +13,15 @@ const handleClick = (character) => {
         });
     } else {
         const cookiesIds = cookieExist.split("&");
-        if (cookiesIds.indexOf(character.id.toString()) === -1) {
+        const idIsUnique = cookiesIds.indexOf(character.id.toString());
+        if (idIsUnique === -1) {
             Cookies.set(
                 "marvelFavoriteCharacters",
                 `${cookieExist}${character.id}&`
             );
         }
-        if (cookiesIds.indexOf(character.id.toString()) !== -1) {
-            const i = cookiesIds.indexOf(character.id.toString());
-            cookiesIds.splice(i, 1);
+        if (idIsUnique !== -1) {
+            cookiesIds.splice(idIsUnique, 1);
             const marvelFavoriteCharacters = cookiesIds.join("&");
             Cookies.set("marvelFavoriteCharacters", marvelFavoriteCharacters, {
                 expires: 14,
