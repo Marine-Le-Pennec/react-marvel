@@ -39,7 +39,8 @@ li {
 
 .logo:hover,
 header div button:hover,
-.pagination-button:hover {
+.pagination-button:hover,
+button {
   cursor: pointer;
 }
 
@@ -296,7 +297,8 @@ header div button:hover {
 }
 
 .favorite-character-element img {
-  height: 200px;
+  height: 250px;
+  width: auto;
   margin-right: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;

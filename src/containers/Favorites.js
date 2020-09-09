@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 
+import { useHistory } from "react-router-dom";
+
 import FavoritesCharactersElements from "../components/FavoritesCharactersElements";
 import FavoritesComicsElements from "../components/FavoritesComicsElements";
 
 import Cookies from "js-cookie";
 
 const Favorites = () => {
+  const history = useHistory();
+
   const [cookiesLoadup, setCookiesLoadup] = useState(true);
   const [cookiesCharacter, setCookiesCharacter] = useState("");
   const [cookiesComics, setCookiesComics] = useState("");
 
+  // Get favorite from cookies
   useEffect(() => {
+    // Favorite Characters
     let userCookiesCharacter = Cookies.get("marvelFavoriteCharacters");
     let userCookiesArrayCharacter;
     if (userCookiesCharacter) {
@@ -20,8 +26,8 @@ const Favorites = () => {
       );
       userCookiesArrayCharacter = userCookiesCharacter.split("&");
     }
-
     setCookiesCharacter(userCookiesArrayCharacter);
+    // Favorite Comics
     let userCookiesComics = Cookies.get("marvelFavoriteComics");
     let userCookiesArrayComics;
     if (userCookiesComics) {
@@ -35,20 +41,21 @@ const Favorites = () => {
     setCookiesLoadup(false);
   }, []);
 
+  // Remove all favorites
+  const removeFavorites = () => {
+    Cookies.remove("marvelFavoriteComics");
+    Cookies.remove("marvelFavoriteCharacters");
+    setCookiesCharacter("");
+    setCookiesComics("");
+    history.push("/");
+  };
+
   return (
     !cookiesLoadup && (
       <div className="container">
         <div className="favorites-title">
           <h2>Favorites characters</h2>
-          <button
-            onClick={() => {
-              Cookies.remove("marvelFavoriteComics");
-              Cookies.remove("marvelFavoriteCharacters");
-
-              setCookiesCharacter("");
-              setCookiesComics("");
-            }}
-          >
+          <button onClick={() => removeFavorites()}>
             <h3>Remove all Favorites</h3>
           </button>
         </div>
