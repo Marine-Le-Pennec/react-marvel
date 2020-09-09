@@ -22,13 +22,13 @@ const CharacterComicsElements = ({ id, index }) => {
 
   return (
     !isLoading && (
-      <div key={index} className="favorite-character-element">
+      <div key={index} className="comics-section-element">
         <img
           src={data.thumbnail.path + `.${data.thumbnail.extension}`}
           alt=""
         />
         <div>
-          <h3>{data.title}</h3>
+          <h2>{data.title}</h2>
           <p>{data.description}</p>
         </div>
       </div>

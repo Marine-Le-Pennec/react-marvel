@@ -12,7 +12,7 @@ const CharacterComics = () => {
   return (
     <section className="container main">
       <h2>{character.name} comics list :</h2>
-      <ul>
+      <ul className="comics-section">
         {character.comics.items.length !== 0 ? (
           character.comics.items.map((e, index) => {
             return (
