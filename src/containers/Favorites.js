@@ -59,7 +59,7 @@ const Favorites = () => {
             <h3>Remove all Favorites</h3>
           </button>
         </div>
-        <section className="favorites">
+        <section className="favorites-characters">
           {cookiesCharacter &&
             cookiesCharacter.map((e, index) => {
               return (
@@ -68,7 +68,7 @@ const Favorites = () => {
             })}
         </section>
         <h2>Favorites comics</h2>
-        <section className="favorites">
+        <section className="favorites-comics">
           {cookiesComics &&
             cookiesComics.map((e, index) => {
               return (

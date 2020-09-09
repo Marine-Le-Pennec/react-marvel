@@ -1,7 +1,12 @@
 :root {
-  --background: #fafafa;
+  --background: #242424;
+  --marvel-red: #ed1d24;
   --heavy-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   --xl-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 a,
@@ -16,7 +21,7 @@ a:active {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 h1 {
@@ -65,7 +70,7 @@ header,
 }
 
 header {
-  background-color: #ed1d24;
+  background-color: #202020;
   padding: 1rem 0;
 }
 
@@ -85,28 +90,28 @@ header div button {
   background-color: transparent;
   border: none;
   transition: all 0.3s ease-in-out;
+  margin-right: 50px;
 }
 
 header div button:hover {
+  background-color: var(--marvel-red);
   transform: scale(1.03);
 }
 
-.search-bar-section {
-  background-color: black;
-}
-
 .search-bar {
-  height: 50px;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  height: 80px;
+  background-color: var(--background);
 }
 
 .search-bar input,
 .search-bar button {
   height: 50px;
-  width: 500px;
-  border-radius: 5px;
   border: none;
   border: 1px solid lightgrey;
-  box-shadow: var(--xl-shadow);
   margin-right: 20px;
   font-size: 1.1rem;
 }
@@ -118,6 +123,7 @@ header div button:hover {
 
 .search-bar input {
   padding-left: 10px;
+  width: 100%;
 }
 
 .main {
@@ -129,20 +135,23 @@ header div button:hover {
 }
 
 .character-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .character-section-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
-  background-color: white;
-  width: 24%;
+  background-color: var(--background);
   margin-bottom: 30px;
-  border-radius: 5px;
-  height: 250px;
+  height: 270px;
   box-shadow: var(--xl-shadow);
   transition: all 0.3s ease-in-out;
+  color: white;
+  text-transform: uppercase;
 }
 
 .character-section-element:hover {
@@ -151,54 +160,71 @@ header div button:hover {
   text-decoration: underline;
 }
 
+.character-section-element-title {
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
 .character-section-element h2 {
   margin-top: 10px;
   font-size: 20px;
   text-align: center;
+  font-weight: bold;
 }
 
 .character-section-element img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-bottom: var(--marvel-red) solid 3px;
 }
 
 .comics-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .comics-section-element {
+  box-sizing: border-box;
+  background-color: var(--background);
   position: relative;
-  width: 100%;
   display: flex;
   height: 200px;
   margin-bottom: 20px;
   box-shadow: var(--heavy-shadow);
   position: relative;
   transition: all 0.3s ease-in-out;
+  color: white;
 }
 
 .comics-section-element:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .comics-section-element h2 {
   margin-top: 10px;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .comics-section-element p {
   font-size: 0.8rem;
+  line-height: 1.3rem;
+  height: 5.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .comics-section-element img {
   height: 100%;
   margin-right: 10px;
+}
+
+.comics-section-element-text {
+  box-sizing: border-box;
+  padding: 10px 20px;
 }
 
 .pagination {
@@ -256,9 +282,16 @@ header div button:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.favorites {
-  display: flex;
-  flex-wrap: wrap;
+.favorites-characters {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.favorites-comics {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .favorites-title {
@@ -279,59 +312,11 @@ header div button:hover {
   color: red;
 }
 
-.favorite-character-element {
-  width: 100%;
-  display: flex;
-  background-color: black;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  color: white;
-  border-radius: 10px;
-  box-shadow: var(--heavy-shadow);
-  transition: all 0.3s ease-in-out;
-}
-
-.favorite-character-element:hover {
-  cursor: pointer;
-  transform: scale(1.01);
-}
-
-.favorite-character-element img {
-  height: 250px;
-  width: auto;
-  margin-right: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.favorite-character-element h3 {
-  margin: 20px 0;
-}
-
-.favorite-character-element p {
-  font-size: 0.9rem;
-  color: #808484;
-  line-height: 1.3rem;
-  height: 5.2rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0 0 1rem;
-}
-
 @media screen and (max-width: 1200px) {
   .container {
     width: 80%;
   }
-  .character-section-element {
-    width: 49%;
-  }
-  .search-bar {
-    width: 100%;
-  }
-  .search-bar input {
-    width: 50%;
-  }
-  .search-bar button {
-    width: 20%;
+  .character-section {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

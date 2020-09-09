@@ -60,7 +60,7 @@ const ComicsElements = ({ index, comics, isFav }) => {
           alt=""
         />
       )}
-      <div>
+      <div className="comics-section-element-text">
         <h2>{comics.title}</h2>
         {comics.description && <p>{comics.description}</p>}
       </div>
